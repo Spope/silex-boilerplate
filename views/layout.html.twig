@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{ app.request.basepath }}/public/styles/main.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+
+        <div id="main">
+            <div id="header"></div>
+
+            {% block main_container %}
+
+            {% endblock %}
+
+            <div id="footer"></div>
+        </div>
+
+        {% if app.debug %}
+            <script src="{{ app.request.basepath }}/public/js/lib/main.js"></script>
+            <script src="http://devserver2.com:35729/livereload.js"></script>
+        {% else %}
+            <script src="{{ app.request.basepath }}/public/js/build/main.min.js"></script>
+        {%endif %}
+    </body>
+</html>
