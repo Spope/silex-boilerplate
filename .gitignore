@@ -1,0 +1,7 @@
+app/config/config.php
+node_modules/*
+vendor/*
+temp
+.tmp
+*.swp
+composer.phar
