@@ -1,6 +1,6 @@
 <?php
 
-namespace Spope\ConfigBundle\Repository;
+namespace src\Repository;
 
 class CommonRepository {
     protected $db;

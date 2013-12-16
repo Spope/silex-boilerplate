@@ -1,6 +1,11 @@
 <?php
 
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+
 require_once __DIR__.'/../vendor/autoload.php';
+$loader = new UniversalClassLoader();
+$loader->registerNamespace('src', __DIR__.'/..');
+$loader->register();
 
 $config = require_once __DIR__.'/config/config.php';
 

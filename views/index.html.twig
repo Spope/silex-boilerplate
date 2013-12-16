@@ -3,4 +3,10 @@
 
 {% block main_container %}
     Ready : {{ready}}
+
+    {% if demos %}
+        {% for demo in demos %}
+            <p>{{demo.name}}</p>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
