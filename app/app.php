@@ -10,6 +10,6 @@ $app->get('/', function () use ($app) {
     ));
 });
 
-$app->mount('/demo', include __DIR__.'/../src/controller/demoController.php');
+$app->mount('/demo', include __DIR__.'/../src/Controller/demoController.php');
 
 return $app;
