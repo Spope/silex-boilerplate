@@ -4,7 +4,7 @@
 {% block main_container %}
     Ready : {{ready}}
 
-    {% if demos %}
+    {% if demos is defined %}
         {% for demo in demos %}
             <p>{{demo.name}}</p>
         {% endfor %}
