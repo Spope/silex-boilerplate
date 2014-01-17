@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_container %}
+    <form method="post" action="">
+
+            <label>Title : <input type="text" name="title" value="{{cms.title}}" /></label>
+            <textarea name="content">{{cms.content}}</textarea>
+
+            <a class="button gray" href="{{url('adminCms')}}">Back</a>
+            <input type="submit" class="button" value="Save" />
+        </form>
+
+{% endblock %}

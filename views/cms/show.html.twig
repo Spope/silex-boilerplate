@@ -1,0 +1,8 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block main_container %}
+    <h1>{{cms.title}}</h1>
+
+    {{cms.content|raw}}
+{% endblock %}

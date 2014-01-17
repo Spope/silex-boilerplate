@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block main_container %}
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Hook</th>
+                <th>Visible</th>
+                <th>Action</th>
+            </tr>
+        {% for page in pages %}
+            <tr>
+                <td>
+                    <h4>{{page['title']}}</h4>
+                </td>
+                <td>
+                    {% if page['hook'] == 0 %}Header{% elseif page['hook'] == 1 %}Footer{% endif %}
+                </td>
+                <td>
+                    {% if page['is_visible'] == 0 %}No{% elseif page['is_visible'] == 1 %}Yes{% endif %}
+                </td>
+                <td>
+                    <a class="button" href="{{url('adminEditCms', {id:page['id']}) }}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

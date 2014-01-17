@@ -25,3 +25,22 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
+$app->register(new Silex\Provider\SessionServiceProvider());
+
+$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+    'security.firewalls' => array(
+        'secured' => array(
+            'pattern' => '^/admin',
+            'form'    => array('login_path' => '/login', 'check_path' => '/admin/connect'),
+            'logout'  => array('logout_path' => '/admin/disconnect'),
+            'users'   => $app->share(function() use($app) {
+
+                return new src\User\UserProvider($app['db']);
+            })
+        )
+    ),
+    'security.access_rules' => array(
+        array('^/admin$', 'ROLE_ADMIN')
+    )
+));

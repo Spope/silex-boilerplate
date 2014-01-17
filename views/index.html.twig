@@ -3,10 +3,6 @@
 
 {% block main_container %}
     Ready : {{ready}}
-
-    {% if demos is defined %}
-        {% for demo in demos %}
-            <p>{{demo.name}}</p>
-        {% endfor %}
-    {% endif %}
+    <br />
+    Link to a <a href="{{url('cms_show', {slug:'ceci-est-une-page'}) }}" >CMS page</a>
 {% endblock %}
