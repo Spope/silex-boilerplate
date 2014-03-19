@@ -31,7 +31,8 @@ $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
         'secured' => array(
-            'pattern' => '^/admin',
+            'pattern' => '^.*$',
+            'anonymous' => true,
             'form'    => array('login_path' => '/login', 'check_path' => '/admin/connect'),
             'logout'  => array('logout_path' => '/admin/disconnect'),
             'users'   => $app->share(function() use($app) {
